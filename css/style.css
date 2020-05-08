@@ -1,0 +1,36 @@
+body {
+    padding:60px 0;
+}
+
+footer nav {
+    height: 60px;
+}
+
+.todo-item-inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.btn-circle.btn-xl {
+    width: 60px;
+    height: 60px;
+    /* padding: 10px 16px; */
+    border-radius: 30px;
+    font-size: 28px;
+    line-height: 1.33;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+
+#addButton {
+    margin-top: -30px;
+}

@@ -5,84 +5,51 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mmenu.css">
+
     <title>not only toDo</title>
 
-    <style>
-        body {
-            padding:60px 0;
-        }
 
-        footer nav {
-            height: 60px;
-        }
-
-        .todo-item-inner {
-            display: flex;
-            justify-content: space-between;
-            padding: 5px;
-        }
-
-        .btn-circle.btn-xl {
-            width: 70px;
-            height: 70px;
-            padding: 10px 16px;
-            border-radius: 35px;
-            font-size: 24px;
-            line-height: 1.33;
-        }
-
-        .btn-circle {
-            width: 30px;
-            height: 30px;
-            padding: 6px 0px;
-            border-radius: 15px;
-            text-align: center;
-            font-size: 12px;
-            line-height: 1.42857;
-        }
-
-        #addButton {
-            
-            margin-top: -30px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    </style>
   </head>
   <body>
 
-    <header>
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavigation" 
-        aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#">TodoApp</a>
-      
-        <div class="collapse navbar-collapse" id="mainNavigation">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-          <!-- <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form> -->
-        </div>
-    </nav>
-    </header>
 
-    <div class="container">
+    <div class="container" id="main-container">
+
+        <!-- Header -->
+        <header>
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavigation" 
+                aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#">TodoApp</a>
+            
+                <div class="collapse navbar-collapse" id="mainNavigation">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul> -->
+                <!-- <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form> -->
+                </div>
+            </nav>
+        </header>
 
         <div id="todoItemContainer" >
         
@@ -106,19 +73,51 @@
     
         </div>
 
+        <footer>
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-bottom d-flex justify-content-around">
+    
+                <!-- <button class="btn btn-warning toolbar-custom-btn">...</button>
+                <button class="btn btn-warning toolbar-custom-btn">Menu</button> -->
+    
+                <button id="addButton" type="btn" class="btn btn-warning btn-circle btn-xl" data-toggle="modal" data-target="#addFormModalWindow">+</button>
+    
+                <!-- <button class="btn btn-warning toolbar-custom-btn">Menu</button>
+                <button class="btn btn-warning toolbar-custom-btn">Menu</button> -->
+    
+            </nav>
+        </footer>
+
     </div>
 
-    <footer>
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-bottom">
-            <button id="addButton" type="btn" class="btn btn-warning btn-circle btn-xl">+</button>
-        </nav>
-    </footer>
+    
+
+    <!-- Modal -->
+    <div class="modal fade" id="addFormModalWindow" data-backdrop="static"  tabindex="-1" role="dialog" aria-labelledby="Add Item" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Add something</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            <input type="text" class="form-control" name="content">
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="js/mmenu.js"></script>
 
     <script>
         $(function(){
@@ -129,7 +128,6 @@
                 $("#todoItemContainer").append(template);
             }
 
-            $("#addButton").click(function(){ alert('soon...'); });
         })
     </script>
 
